@@ -107,7 +107,7 @@ function brute(){
 #thread
 (
     for i in $(cat target); do
-        ((thread=thread%limit)); ((thread++==1)) && wait
+        ((thread=thread%limit)); ((thread++==0)) && wait
         brute "$i" &
     done
     wait
